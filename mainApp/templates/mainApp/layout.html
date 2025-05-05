@@ -1,0 +1,190 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block Title%}
+    {%endblock%}
+    <title>Сompress-PNG</title>
+    <link rel="stylesheet" href="{% static 'mainApp/css/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon"></div>
+        </div>
+
+        <div class="menu">
+            <div class='logo-name'>
+                <a href="{% url 'index' %}">Image Compressor</a>
+            </div>
+            <div class="menu-item">
+                <a href="/Converter"> Конвертер</a>
+            </div>
+            <div class="menu-item"><a href="{% url 'index' %}">Компрессор</a></div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="image-compressor">
+            {% block content%}
+
+            {%endblock%}
+            <div class="upload-area" id="upload-area">
+                <div class="compressor-box">
+                    <form method="post" enctype="multipart/form-data" id="upload-form">
+                        {%csrf_token%}
+
+                        <div class="inner-box"><input type="file" id=fileElem name="images" multiple hidden
+                                                      accept="{{content_type}}">
+
+                            <div class="inner-box-icon"></div>
+
+                            <label for="fileElem" class="select-image">
+
+                                <div class="select-icon"></div>
+
+                                <div class="select-text">Выберите изображение</div>
+
+
+                            </label>
+
+                            <div class="drag-text">
+                                <span class="highlight">или перетащите сюда</span>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <p id="error-msg" style="color: red"></p>
+
+        </div>
+
+    </div>
+
+    {% if processed_images %}
+    <div class="image">
+        <h3>Загруженные изображения:</h3>
+        <div class="image-gallery">
+            {% for image in processed_images %}
+            <div class="image-item" onclick="selectImage(this)"
+                 data-name="{{ image.image_name }}"
+                 data-url="{{ image.image_url }}"
+                 data-size="{{ image.original_size }}"
+                 data-compressed="{{ image.compressed_size }}"
+                 data-percent="{{ image.compressed_rate }}"
+                 data-level="{{compression_level}}"
+                 data-url-orig="{{image.original_path}}">
+                <img src="{{ image.image_url }}" alt="{{ image.image_name }}">
+
+                <p>{{ image.image_name|truncatechars:20 }}</p>
+                <a href="{{ image.image_url }}" class="download-btn"
+                   download="{{ image.image_name }}">Скачать
+                    изображение</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% if processed_images|length > 1 %}
+
+        <a href="{% url 'downloadAllImages' %}" class="download-all-btn">Скачать всё</a>
+
+        {% endif %}
+
+    </div>
+    {% if is_compress %}
+    <div id="compression-widget" class="compression-widget" style="display: block;">
+
+        {# Заголовок: имя и формат #}
+        <div class="widget-header">
+
+            <h3>{{ processed_images.0.image_name|truncatechars:30}}</h3>
+            <span class="image-format"></span>
+        </div>
+
+        {# Информационная строка сверху #}
+        <div class="widget-info">
+            <div class="original-size">
+                <strong>Оригинал: <span id="original-size">{{ processed_images.0.original_size }}</span> KB</strong>
+            </div>
+            <div class="compressed-size">
+                <strong>Сжатый: <span id="compressed-size">{{ processed_images.0.compressed_size }}</span> KB </strong>
+                <span id="compression-percent" class="percent">({{ processed_images.0.compressed_rate }}%)</span>
+            </div>
+        </div>
+
+        <div class="widget-body">
+            {# Превью в центре #}
+            <div class="preview-container">
+                <img id="preview-img" src="{{ processed_images.0.image_url }}" alt="Preview" class="preview-img">
+
+            </div>
+
+            {# Контролы справа #}
+            <form id="compression-form" method="post" action="{% url 'compressImage' %}">
+                {% csrf_token %}
+                <input type="hidden" name="image_url" id="form-image-url"
+                       value="{{ processed_images.0.image_url }}">
+                <input type="hidden" name="image_name" id="form-image-name" value="{{ processed_images.0.image_name }}">
+                <input type="hidden" name="original_size" id="form-original-size"
+                       value="{{ processed_images.0.original_size }}">
+                <input type="hidden" name="compressed_size" id="form-compressed-size"
+                       value="{{ processed_images.0.compressed_size }}">
+                <div class="controls-container">
+                    <label for="compression-value">Качество:</label>
+                    <input
+                            type="number"
+                            id="compression-value"
+                            name="compression_value"
+                            value="{{ compression_level }}"
+                            min="10"
+                            max="100"
+                    >
+                    <input
+                            type="range"
+                            id="compression-slider"
+                            name="compression_slider"
+                            min="10"
+                            max="100"
+                            value="{{ compression_level }}"
+                    >
+
+                    <button class="download-btn" type="submit" id="apply-compression">Применить</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    {% endif %}
+    {% endif %}
+
+
+    <div class="footer">
+        <div class="column">
+            <div class="column-title">Инструменты</div>
+            <div class="column-item"><a href="/Converter">Конвертер</a></div>
+            <div class="column-item"><a href="/">Компрессор</a></div>
+        </div>
+        <div class="column">
+            <div class="column-title">Конвертер</div>
+            <div class="column-item"><a href="/to-PNG-Converter/">в PNG </a></div>
+            <div class="column-item"><a href="/to-JPG-Converter/">в JPG</a></div>
+
+            <div class="column-item"><a href="/to-WebP-Converter/">в WebP</a></div>
+
+        </div>
+        <div class="column">
+            <div class="column-title">Компрессор</div>
+            <div class="column-item"><a href="/PNG-Compressor/">Сжать PNG</a></div>
+            <div class="column-item"><a href="/JPG-Compressor/">Сжать JPEG</a></div>
+            <div class="column-item"><a href="/SVG-Compressor/">Сжать SVG</a></div>
+            <div class="column-item"><a href="/WebP-Compressor/">Сжать WebP</a></div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'mainApp/js/app.js' %}"></script>
+</body>
+</html>

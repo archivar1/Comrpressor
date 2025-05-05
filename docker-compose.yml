@@ -1,0 +1,16 @@
+version: "1.0"
+
+services:
+  web:
+    build: .
+    container_name: compressor
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - static_volume:/Compressor/mainApp/static
+      - media_volume:/media
+
+volumes:
+  static_volume:
+  media_volume:

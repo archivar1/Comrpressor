@@ -1,0 +1,424 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    min-height: 88vh;
+    padding: 40px;
+}
+
+/* Заголовок */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    background-image: url('logo.png');
+    background-size: cover;
+    transform: scale(4);
+    margin-left: 10px;
+
+}
+.menu {
+    display: flex;
+    gap: 24px;
+
+}
+.logo-name a {
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-right: 930px;
+    position: relative;
+    top: -7px;
+
+
+
+
+}
+.menu-item a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: 400;
+    padding:8px;
+    border-radius: 10px;
+    font-size: 16px;
+    position: relative;
+    top: -7px;
+}
+
+/* Основной контент */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.image-compressor {
+    text-align: center;
+}
+
+.image-compressor .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.compressor-box {
+    position: relative;
+    width: 554px;
+    height: 250px;
+    background: #abb9fb;
+    border: 1px solid #0d50df;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+.compressor-box.highlight {
+    border: 1px dashed #007BFF;
+    background-color: #f0f8ff;
+}
+.inner-box {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 535px;
+    height: 209px;
+    background: #7180e3;
+
+}
+.inner-box-icon {
+    position: absolute;
+    top: 35px;
+    left: 250px;
+    width: 50px;
+    height: 50px;
+    background-image: url('img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.select-image {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 252px;
+    height: 49px;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.select-image:hover{
+background-color: #d7d7d7;
+}
+input[type="file"] {
+    display: none;
+}
+.select-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('icon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.select-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.drag-text {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.drag-text .highlight {
+    color: #252424;
+    font-weight: 600;
+}
+
+.drag-text .grey {
+    color: #d9d9d9;
+}
+
+/* Frame2 */
+
+.slider-label {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-field input {
+            width: 80px;
+            height: 40px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            text-align: center;
+            color: #1E1E1E;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 8px;
+        }
+
+        .slider {
+            width: 300px;
+            height: 16px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #E8DEF8;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #65558F;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #FFFFFF;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #65558F;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #FFFFFF;
+        }
+
+.image {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 10px auto 0;
+    justify-content: center; /* центрируем колонки */
+    max-width: 1200px;        /* можно задать контейнеру максимальную ширину */
+}
+
+.image-item {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.image-item p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.download-all-container {
+    margin-top: 20px;
+    text-align: center;
+    justify-content: top;
+}
+
+.download-all-btn {
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.download-all-btn:hover {
+    background-color: #2980b9;
+}
+.download-btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 14px;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
+
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background: #0C10D3;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            background: #0A0EBF;
+        }
+/* Футер */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 50px 40px;
+    border-top: 1px solid #d9d9d9;
+    margin-top: auto
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.column-item a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1e1e1e;
+}
+
+
+/* image settings */
+.compression-widget {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.widget-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.widget-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.widget-body {
+  display: flex;
+  gap: 20px;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.controls-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#compression-value {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#compression-slider {
+  width: 100%;
+}
+
+#apply-compression {
+  padding: 8px;
+  cursor: pointer;
+}

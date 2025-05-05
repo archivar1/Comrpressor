@@ -1,0 +1,72 @@
+{% block settings %}
+<section class="settings page__settings" id="settingsSlot">
+    <div>
+        <p class="settings__title">
+            <span class="settings__title-text">image</span>
+            <span class="settings__loader-outer"><span
+                    class="loader settings__loader loader_hidden"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+        </p>
+        <div class="settings__content">
+            <div class="settings__compare-outer">
+                <div class="image-info settings__image-info">
+                    <p class="image-info__text"><span class="image-info__title">Original:</span> <span
+                            class="image-info__bold">245 KB</span></p>
+                    <p class="image-info__text"><span class="image-info__title">Compressed:</span> <span
+                            class="image-info__bold">169 KB (-31<span class="percent-symbol">%</span>)</span></p>
+                </div>
+                <div class="compare settings__compare">
+                    <canvas class="compare__canvas" id="canvas" width="856" height="320"></canvas>
+                    <span class="thumb compare__thumb" id="thumb" style="transform: translate(334.5px, 0px);">
+              <span class="thumb__button">
+                <svg class="thumb__icon thumb__icon_left" viewBox="0 0 8 16" width="8" height="16">
+                  <use xlink:href="#arrow-right"></use>
+                </svg>
+                <svg class="thumb__icon thumb__icon_right" viewBox="0 0 8 16" width="8" height="16">
+                  <use xlink:href="#arrow-right"></use>
+                </svg>
+              </span>
+            </span>
+                </div>
+            </div>
+            <div class="settings__quality-outer">
+                <div class="quality settings__quality">
+                    <label for="quality" class="quality__field">
+                        <p class="quality__title">
+                            <span class="quality__title-text">Quality</span>
+                        </p>
+                    </label>
+                    <input id="quality" type="text" class="quality__input" maxlength="5" autocomplete="off">
+                    <div class="quality__range-outer">
+                        <input type="range" step="1" aria-label="Quality" class="quality__range-input" min="10"
+                               max="100" style="left: 32px; width: 207px;">
+                    </div>
+                    <button class="button quality__button">
+                        <span class="button__text">APPLY</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="frameControlSlot">
+            <div class="frame-counter settings__frame-counter settings__frame-counter_hidden">
+                <button class="button button_min frame-counter__button" disabled="">
+                    <span class="button__text">-10</span>
+                </button>
+                <button class="button button_min frame-counter__button">
+                    <span class="button__text">-1</span>
+                </button>
+                <label for="counter" class="frame-counter__label">
+                    <input id="counter" type="text" class="frame-counter__input" autocomplete="off" maxlength="1"
+                           style="width:12px">
+                    <span class="frame-counter__label-all">0</span>
+                </label>
+                <button class="button button_min frame-counter__button">
+                    <span class="button__text">+1</span>
+                </button>
+                <button class="button button_min frame-counter__button" disabled="">
+                    <span class="button__text">+10</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

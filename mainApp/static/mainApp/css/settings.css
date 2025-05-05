@@ -1,0 +1,418 @@
+/* Frame 2 */
+
+width: 1196px;
+height: 337px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Continuous slider
+
+<p>Continuous sliders can be freely dragged to any value in the range. A slider can be either continuous or discrete.</p>
+*/
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 0px 0px 4px;
+gap: 6px;
+
+position: absolute;
+width: 354px;
+height: 44px;
+left: 437px;
+top: 271px;
+
+
+
+/* Handle */
+
+width: 4px;
+height: 44px;
+
+/* M3/sys/light/primary */
+background: #65558F;
+border-radius: 2px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State-layer */
+
+position: absolute;
+visibility: hidden;
+left: -62px;
+right: 62px;
+top: 0px;
+bottom: 0px;
+
+/* M3/state-layers/light/on-primary/opacity-0.08 */
+background: rgba(255, 255, 255, 0.08);
+border-radius: 4px;
+
+
+/* Inactive track */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+padding: 0px;
+isolation: isolate;
+
+width: 340px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+
+
+/* Track */
+
+width: 340px;
+height: 16px;
+
+/* M3/sys/light/secondary-container */
+background: #E8DEF8;
+border-radius: 2px 16px 16px 2px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+
+/* Track dot */
+
+position: absolute;
+width: 4px;
+height: 4px;
+right: 4px;
+top: calc(50% - 4px/2 + 0px);
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+
+
+/* Dot */
+
+position: absolute;
+width: 4px;
+left: calc(50% - 4px/2);
+top: 0%;
+bottom: 0%;
+
+/* M3/sys/light/on-secondary-container */
+background: #4A4459;
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 757px;
+height: 159px;
+left: calc(50% - 757px/2 - 0.5px);
+top: 89px;
+
+background: #D9D9D9;
+
+
+/* Название изображения.расширение */
+
+position: absolute;
+width: 287px;
+height: 16px;
+left: 454px;
+top: 14px;
+
+/* Single Line/Body Base
+
+Used for any text element where you need 100% line height. For example, an input field, a label.
+*/
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Оригинал: Размер */
+
+position: absolute;
+width: 144px;
+height: 16px;
+left: 277px;
+top: 42px;
+
+/* Single Line/Body Base
+
+Used for any text element where you need 100% line height. For example, an input field, a label.
+*/
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Сжатый: Размер */
+
+position: absolute;
+width: 131px;
+height: 16px;
+left: 759px;
+top: 42px;
+
+/* Single Line/Body Base
+
+Used for any text element where you need 100% line height. For example, an input field, a label.
+*/
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px;
+gap: 8px;
+
+position: absolute;
+width: 125px;
+height: 40px;
+left: 799px;
+top: 273px;
+
+background: #0C10D3;
+border-radius: 8px;
+
+
+/* Star
+
+Keywords: bookmark, favorite, like
+*/
+
+display: none;
+width: 16px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+width: 104px;
+height: 16px;
+
+/* Single Line/Body Base
+
+Used for any text element where you need 100% line height. For example, an input field, a label.
+*/
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+
+color: #F5F5F5;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* X
+
+Keywords: cancel, close, delete, remove, times, clear
+*/
+
+display: none;
+width: 16px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Input Field */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+position: absolute;
+width: 240px;
+height: 40px;
+left: 169px;
+top: 273px;
+
+
+
+/* Label */
+
+display: none;
+width: 240px;
+height: 22px;
+
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Description */
+
+display: none;
+width: 240px;
+height: 22px;
+
+/* Body Base */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+
+color: #757575;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Input */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 16px;
+
+width: 240px;
+min-width: 240px;
+height: 40px;
+
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Value */
+
+width: 208px;
+height: 16px;
+
+/* Single Line/Body Base
+
+Used for any text element where you need 100% line height. For example, an input field, a label.
+*/
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+
+color: #1E1E1E;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* Error */
+
+display: none;
+width: 37px;
+height: 22px;
+
+/* Body Base */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+
+color: #1E1E1E;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
